@@ -1,0 +1,19 @@
+{
+  "name": "cf-json-db",
+  "version": "1.0.0",
+  "description": "simple json database - write and read data to a json file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmccaffray/cf-json-db.git"
+  },
+  "author": "brett mccaffray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bmccaffray/cf-json-db/issues"
+  },
+  "homepage": "https://github.com/bmccaffray/cf-json-db"
+}
