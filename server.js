@@ -6,12 +6,15 @@ var fs = require('fs');
 
 var app = express();
 
-app.use('/', function(req, res){
+app.get('/', function(req, res){
 	res.send('append text to the url - ex. /test');
 });
 
-app.use('/:jsonInput', function(req, res){
+app.post('/post/:jsonInput', function(req, res){
 	fs.writeFileSync('./output/jsonInput.json', '{ "jsonInput" : "' + req.params.jsonInput + '" }', 'utf8');
+});
+
+app.get('/:jsonInput', function(req, res){
 	res.send(fs.readFileSync('./output/jsonInput.json', 'utf8'));
 });
 
