@@ -10,12 +10,15 @@ app.get('/', function(req, res){
 	res.send('append text to the url - ex. /test');
 });
 
-app.post('/post/:jsonInput', function(req, res){
-	fs.writeFileSync('./output/jsonInput.json', '{ "jsonInput" : "' + req.params.jsonInput + '" }', 'utf8');
+app.post('/:jsonInput', function(req, res){
+	var jsonStr = JSON.stringify("{'jsonInput': " + req.params.jsonInput + "}");
+	fs.writeFileSync('./output/jsonInput.json', jsonStr);
 });
 
 app.get('/:jsonInput', function(req, res){
-	res.send(fs.readFileSync('./output/jsonInput.json', 'utf8'));
+	fs.readFile('./output/jsonInput.json', function(err, data){
+		res.send(JSON.parse(data));
+	});
 });
 
 var server = http.createServer(app);
