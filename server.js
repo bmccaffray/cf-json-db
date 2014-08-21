@@ -11,7 +11,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/:jsonInput', function(req, res){
-	var jsonStr = JSON.stringify("{'jsonInput': " + req.params.jsonInput + "}");
+	var jsonStr = JSON.stringify("{'jsonInput': " + req.body + "}");
 	fs.writeFileSync('./output/jsonInput.json', jsonStr);
 });
 
