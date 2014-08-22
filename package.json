@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/bmccaffray/cf-json-db/issues"
   },
-  "homepage": "https://github.com/bmccaffray/cf-json-db"
+  "homepage": "https://github.com/bmccaffray/cf-json-db",
+  "dependencies": {
+    "body-parser": "^1.6.5",
+    "express": "^4.8.4"
+  }
 }
